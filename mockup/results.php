@@ -13,6 +13,7 @@ $query="SELECT * FROM runners WHERE BibNumber='" . $_GET["bibNumber"] . "';";
 * result is now an array containing the entire contents of the
 * result table */
 $result=mysql_query($query);
+
 ?>
 
 <html>
@@ -21,10 +22,10 @@ $result=mysql_query($query);
     <h1>
       Runners List
     </h1>
-Bib Number : First Name : Last Name<br />
+Bib Number : First Name : Last Name : Age<br />
 <?php
 while($runner = mysql_fetch_array($result)) {
-  echo $runner["BibNumber"] . " : " . $runner["FirstName"] . " : " . $runner["LastName"] . "<br />";
+  echo $runner["BibNumber"] . " : " . $runner["FirstName"] . " : " . $runner["LastName"] . " : " . $runner["age"] . "<br />";
   //print_r($runner);
 }
 ?>
